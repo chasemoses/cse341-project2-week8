@@ -1,0 +1,31 @@
+### GET ALL INVENTORY ITEMS
+GET http://localhost:8080/inventory
+
+### CREATE ONE INVENTORY ITEM
+POST http://localhost:8080/inventory
+Content-Type: application/json
+
+{
+    "category": "Clothing",
+    "type": "Shirt",
+    "size": "Medium",
+    "color": "Pink",
+    "quantity": 5
+}
+
+// PRODUCTION
+
+### GET ALL INVENTORY ITEMS
+GET https://cse341-lesson5.herokuapp.com/inventory
+
+### CREATE ONE INVENTORY ITEM
+POST https://cse341-lesson5.herokuapp.com/inventory
+Content-Type: application/json
+
+{
+    "category": "Clothing",
+    "type": "Onesie",
+    "size": "0-3 Month",
+    "color": "White",
+    "quantity": 5
+}

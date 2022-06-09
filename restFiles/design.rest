@@ -1,0 +1,27 @@
+### GET ALL DESIGNS
+GET http://localhost:8080/designs
+
+### CREATE ONE DESIGN
+POST http://localhost:8080/designs
+Content-Type: application/json
+
+{
+    "name": "Father's Day Gift",
+    "material": "Vinyl",
+    "price": 5.50
+}
+
+// PRODUCTION
+
+### GET ALL DESIGNS
+GET https://cse341-lesson5.herokuapp.com/designs
+
+### CREATE A DESIGN
+POST https://cse341-lesson5.herokuapp.com/designs
+Content-Type: application/json
+
+{
+    "name": "Test",
+    "material": "Ink",
+    "price": 5.50
+}
