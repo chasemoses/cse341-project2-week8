@@ -44,8 +44,16 @@ const createProducts = async (req, res) => {
     })
 
     try {
-        const newProduct = await product.save();
-        res.status(201).json(newProduct);
+        if (req.oidc.isAuthenticated)
+        {
+            const newProduct = await product.save();
+            res.status(201).json(newProduct);
+        }
+        else 
+        {
+            res.status(401).json({message: "Not Authorized"})
+        }
+
     } catch(err) {
         res.status(400).json({message: err.message});
 
