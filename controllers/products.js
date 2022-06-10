@@ -142,7 +142,7 @@ async function getProductById(req,res,next) {
 
 }
 
-async function authorize(req, res, next)
+function authorize(req, res, next)
 {
     requiresAuth.apply;
     if(!req.oidc.isAuthenticated)
