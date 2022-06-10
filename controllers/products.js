@@ -1,4 +1,5 @@
 const Product = require('../models/product');
+const {requiresAuth} = require('express-openid-connect');
 
 const getProducts = async (req, res) => {
 
@@ -28,7 +29,7 @@ const getProduct = async (req, res) => {
 
 }
 
-const createProducts = async (req, res) => {
+const createProducts =  async (req, res) => {
     const product = new Product ({
 
         // #swagger.tags = ['Products']
@@ -138,6 +139,16 @@ async function getProductById(req,res,next) {
     res.product = product;
     next();
 
+
+}
+
+async function authorize(req, res, next)
+{
+    requiresAuth.apply;
+    if(!req.oidc.isAuthenticated)
+    {
+        res.status(401).json({message: 'Not Authenticated.'})
+    }
 
 }
 
