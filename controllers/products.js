@@ -149,6 +149,7 @@ async function authorize(req, res, next)
     {
         res.status(401).json({message: 'Not Authenticated.'})
     }
+    next();
 
 }
 
@@ -159,5 +160,6 @@ module.exports = {
     createProducts,
     updateProduct,
     deleteProduct,
-    getProductById
+    getProductById,
+    authorize
 }

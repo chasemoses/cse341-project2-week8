@@ -14,7 +14,7 @@ router.get('/products/:id', products.getProductById, products.getProduct);
 
 
 // POST Product (This should be restricted as we don't want customers creating products.)
-router.post('/products', products.createProducts);
+router.post('/products', products.authorize, products.createProducts);
 
 // Delete Product
 router.delete('/products/:id', requiresAuth(), products.getProductById, products.deleteProduct);
